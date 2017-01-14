@@ -12,7 +12,7 @@ Fork the repo and write a script or application that, given a reasonably well-fo
 
 Returns the address of the geographically closest store from the dataset.
 
-And write up a paragraph or two about how your solution works, and put it in this readme file.
+Also please write up a paragraph or two about how your solution works, any assumptions you made, or caveats about your implementation, and put it in this readme file.
 
 # Notes
 
@@ -20,7 +20,7 @@ Feel free to do this in whatever language you would like, and focus on the probl
 
 You might need to use external APIs or services to get a working solution. That's fine. Also fine to make it work entirely offline.
 
-If you do add cool polish, of course that will count for something, but *by far the most important thing is delivering working software that solves the problem of finding the closest location of this store*  .
+If you do add cool polish or go above an beyond in some way, feel free, but *by far the most important thing is delivering working software that solves the problem of finding the closest location of this store*.
 
 I know which one is closest to my house, and the first thing I'll do is verify that it returns the address I expect.
 
