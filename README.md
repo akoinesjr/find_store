@@ -16,8 +16,6 @@ Returns the address of the geographically closest store from the dataset.
 
 Also please write up a paragraph or two about how your solution works, any assumptions you made, or caveats about your implementation, and put it in this readme file.
 
-This whole challenge should take somewhere between 30 minutes to as long as 2 hours. No bonus points for speed -- just trying to give folks a sense of how long this might take.
-
 Send me a github link to the final project.
 
 # Notes
