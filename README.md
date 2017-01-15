@@ -6,7 +6,7 @@ This is a tabular dataset of the locations of every store of a major national re
 
 # Deliverables
 
-You can either fork this repo OR just download the file and you can create your own repo.
+Please download the file (rather than forking this repo) and, do the exercise, and then upload to your own repo.
 
 Then, write a script or application that, given a reasonably well-formed address string like:
 
