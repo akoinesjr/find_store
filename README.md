@@ -6,15 +6,18 @@ This is a tabular dataset of the locations of every store of a major national re
 
 # Deliverables
 
-Please download the file (rather than forking this repo) and, do the exercise, and then upload to your own repo.
+Please download the file (rather than forking this repo), do the exercise, and then upload to your own repo.
 
 Then, write a script or application that, given a reasonably well-formed address string like:
 
-1770 Union St, San Francisco, CA 94115
+*"1770 Union St, San Francisco, CA 94123"*
 
 Returns the address of the geographically closest store from the dataset.
 
-Also please write up a paragraph or two about how your solution works, any assumptions you made, or caveats about your implementation, and put it in this readme file.
+Additionally:
+
+- Please write up a paragraph or two about how your solution works, any assumptions you made, or caveats about your implementation, and put it in a readme file.
+- Please write at **least one unit or integration test** that asserts something meaningful about the program. One good test is better than a bunch of mediocre tests.
 
 Send me a github link to the final project.
 
