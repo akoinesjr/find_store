@@ -17,8 +17,10 @@ Find Store
   the distance to that store.
 
 Usage:
-  find_store --address="<address>" [--units=(mi|km)]
-  find_store --zip=<zip> [--units=(mi|km)]
+  find_store --address="<address>"
+  find_store --address="<address>" [--units=(mi|km)] [--output=text|json]
+  find_store --zip=<zip>
+  find_store --zip=<zip> [--units=(mi|km)] [--output=text|json]
 
 Options:
   --zip=<zip>          Find nearest store to this zip code. If there are multiple best-matches, return the first.
