@@ -21,9 +21,10 @@ Usage:
   find_store --zip=<zip> [--units=(mi|km)]
 
 Options:
-  --zip=<zip>       Find nearest store to this zip code. If there are multiple best-matches, return the first.
-  --address         Find nearest store to this address. If there are multiple best-matches, return the first.
-  --units=(mi|km)   Display units in miles or kilometers [default: mi]
+  --zip=<zip>          Find nearest store to this zip code. If there are multiple best-matches, return the first.
+  --address            Find nearest store to this address. If there are multiple best-matches, return the first.
+  --units=(mi|km)      Display units in miles or kilometers [default: mi]
+  --output=(text|json) Output in human-readable text, or in JSON (e.g. machine-readable) [default: text]
 
 Example
   find_store --address="1770 Union St, San Francisco, CA 94123"
@@ -34,6 +35,7 @@ Additionally:
 
 - Please write up a paragraph or two about how your solution works, any assumptions you made, or caveats about your implementation, and put it in a readme file.
 - Your solution should be well-tested in the testing framework of your choice. Commit the test suite to your repo.
+- The output format is not rigidly specified. Use your judgement for both the text and json formats.
 
 Send me a github link to the final project.
 
