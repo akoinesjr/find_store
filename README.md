@@ -1,26 +1,37 @@
-# Coding challenge
+# Find Store
 
-In this repo there is store-locations.csv
+find_store.py will locate the nearest store (as the vrow flies) from
+store-locations.csv, print the matching store address, as well as
+the distance to that store.
 
-This is a tabular dataset of the locations of every store of a major national retail chain.
+This repository contains the following files:
 
-# Deliverables
+store-locations.csv - This is a tabular dataset of the locations of every store of a major national retail chain.
+find_store.py - The Find Store application
+requirements.txt - Find Store's dependencies
+config.ini - Configuration values for Find Store
+tests.py -
 
-Please download the file (rather than forking this repo), do the exercise, and then upload to your own repo.
+# Set Up
 
-Write a command-line application that uses the data to conform to the following specification (note that this specification conforms to http://docopt.org/)
+1. Ensure that you are in an environment with both Python and pip installed
+2. Create and activate a new Python virtual environment
+3. Create a file called config.ini in the top level of this repository with the following contents:
+
+[config]
+google_key = $YOUR_GOOGLE_MAPS_API_KEY_HERE
+
+4. Run pip install -r requirement.txt to install Find Store's depencies
+
+# Usage Instructions
 
 ```
-Find Store
-  find_store will locate the nearest store (as the vrow flies) from
-  store-locations.csv, print the matching store address, as well as
-  the distance to that store.
 
 Usage:
-  find_store --address="<address>"
-  find_store --address="<address>" [--units=(mi|km)] [--output=text|json]
-  find_store --zip=<zip>
-  find_store --zip=<zip> [--units=(mi|km)] [--output=text|json]
+  python find_store.py --address="<address>"
+  python find_store.py --address="<address>" [--units=(mi|km)] [--output=text|json]
+  python find_store.py --zip=<zip>
+  python find_store.py --zip=<zip> [--units=(mi|km)] [--output=text|json]
 
 Options:
   --zip=<zip>          Find nearest store to this zip code. If there are multiple best-matches, return the first.
@@ -29,24 +40,15 @@ Options:
   --output=(text|json) Output in human-readable text, or in JSON (e.g. machine-readable) [default: text]
 
 Example
-  find_store --address="1770 Union St, San Francisco, CA 94123"
-  find_store --zip=94115 --units=km
+  python find_store.py --address="1770 Union St, San Francisco, CA 94123"
+  python find_store.py --zip=94115 --units=km
 ```
-
-Additionally:
-
-- Please write up a paragraph or two about how your solution works, any assumptions or caveats, and put it in a readme file.
-- Your solution should be well-tested in the testing framework of your choice. Commit the test suite to your repo.
-- The output format is not rigidly specified. Use your judgement for both the text and json formats.
-
-Send me a github link to the final project.
 
 # Notes
 
-Feel free to do this in whatever language you would like, and focus on the problem itself (rather than framework/scaffolding). Please make sure it's reasonably easy to run your code and there are clear instructions for doing so.
+I assumed that it would be okay to have this program run by executing the file with the relevant arguments as opposed to having the program run from within an interactive mode. It could of course be relatively easily modified to run that way.
 
-You will need to use an external geocoding service. However please implement the distance calculation in your own code. To the extent you need any algorithms, I'm not expecting you to invent anything from scratch, so use Google & external libraries judiciously, and cite/document appropriately.
+I also decided that it made sense for the program to accept either a zip code or address argument but not both.
 
-You can add polish or an extra features if you'd like, but remember that software is about tradeoffs and *by far the most important thing is delivering working, practical software that solves the problem of finding the closest store location*. The goal is not to take up a bunch of your time, but see you solve a problem that looks very much like the type of work we do all the time.
 
-There are a ton of different ways to skin this cat -- be smart, be practical, thanks, and good luck!
+
