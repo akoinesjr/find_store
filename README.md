@@ -1,6 +1,6 @@
 # Find Store
 
-find_store.py will locate the nearest store (as the vrow flies) from
+find_store.py will locate the nearest store (as the crow flies) from
 store-locations.csv, print the matching store address, as well as
 the distance to that store.
 

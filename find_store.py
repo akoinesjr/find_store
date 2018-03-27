@@ -76,7 +76,10 @@ class StoreFinder():
 		distance = round(self.get_distance_between_locations({'lat': closest[6], 'lng': closest[7]}, location, units), 2)
 
 		if self.output == 'text':
-			print("The nearest store is {}, located at {}, {}, {} and is {} {} away from {}".format(closest[0], closest[2], closest[3], closest[4], distance, units, self.address))
+			response = "The nearest store is {}, located at {}, {}, {} and is {} {} away from {}".format(closest[0], closest[2], closest[3], closest[4], distance, units, self.address)
+
+			with open('output.txt', 'w') as outfile:
+				outfile.write(response)
 
 		elif self.output == 'json':
 
