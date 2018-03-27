@@ -15,7 +15,7 @@ tests.py -
 # Set Up
 
 1. Ensure that you are in an environment with both Python 3 and pip installed
-2. Create and activate a new Python virtual environment
+2. Create and activate a new Python 3 virtual environment
 3. Create a file called config.ini in the top level of this repository with the following contents:
 
 [config]

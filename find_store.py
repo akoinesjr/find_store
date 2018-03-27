@@ -11,6 +11,7 @@ import googlemaps
 
 class StoreFinder():
 
+
 	def __init__(self, google_key, address, units, output):
 
 		self.gmaps = googlemaps.Client(google_key)

@@ -30,5 +30,7 @@ class TestStoreFinder(unittest.TestCase):
 		closest = self.StoreFinder.get_closest_location(data, location)
 		self.assertEqual(['San Francisco CBD East', 'SWC Bush and Sansome Street', '225 Bush St', 'San Francisco', 'CA', '94104-4251', '37.790841', '-122.4012802', 'San Francisco County'], closest)
 
+
+
 if __name__ == '__main__':
 	unittest.main()
