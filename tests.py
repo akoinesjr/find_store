@@ -1,4 +1,5 @@
 import pdb
+import os
 import unittest
 import configparser
 from find_store import StoreFinder
@@ -42,6 +43,9 @@ class TestStoreFinder(unittest.TestCase):
 		self.StoreFinder.output = 'json'
 		response = self.StoreFinder.run()
 		self.assertEqual(response, {'Store Name': 'San Francisco CBD East', 'Distance': 0.66, 'Nearest Address': '225 Bush St', 'Units': 'km', 'City': 'San Francisco', 'Search Address': '1 Market St, San Francisco, CA', 'State': 'CA'})
+
+		self.assertEqual(True, os.path.isfile('output.txt'))
+		self.assertEqual(True, os.path.isfile('output.json'))
 
 
 if __name__ == '__main__':
