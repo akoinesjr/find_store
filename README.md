@@ -14,7 +14,7 @@ tests.py -
 
 # Set Up
 
-1. Ensure that you are in an environment with both Python and pip installed
+1. Ensure that you are in an environment with both Python 3 and pip installed
 2. Create and activate a new Python virtual environment
 3. Create a file called config.ini in the top level of this repository with the following contents:
 
@@ -28,10 +28,10 @@ google_key = $YOUR_GOOGLE_MAPS_API_KEY_HERE
 ```
 
 Usage:
-  python find_store.py --address="<address>"
-  python find_store.py --address="<address>" [--units=(mi|km)] [--output=text|json]
-  python find_store.py --zip=<zip>
-  python find_store.py --zip=<zip> [--units=(mi|km)] [--output=text|json]
+  python3 find_store.py --address="<address>"
+  python3 find_store.py --address="<address>" [--units=(mi|km)] [--output=text|json]
+  python3 find_store.py --zip=<zip>
+  python3 find_store.py --zip=<zip> [--units=(mi|km)] [--output=text|json]
 
 Options:
   --zip=<zip>          Find nearest store to this zip code. If there are multiple best-matches, return the first.
@@ -40,15 +40,12 @@ Options:
   --output=(text|json) Output in human-readable text, or in JSON (e.g. machine-readable) [default: text]
 
 Example
-  python find_store.py --address="1770 Union St, San Francisco, CA 94123"
-  python find_store.py --zip=94115 --units=km
+  python3 find_store.py --address="1770 Union St, San Francisco, CA 94123"
+  python3 find_store.py --zip=94115 --units=km
 ```
 
 # Notes
 
-I assumed that it would be okay to have this program run by executing the file with the relevant arguments as opposed to having the program run from within an interactive mode. It could of course be relatively easily modified to run that way.
+I assumed that it would be okay to have this program run by executing the file with the relevant arguments as opposed to having the program run from within an interactive mode. It could of course be relatively easily modified to run that way instead.
 
 I also decided that it made sense for the program to accept either a zip code or address argument but not both.
-
-
-

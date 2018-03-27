@@ -4,6 +4,7 @@ import csv
 import math
 import argparse
 import configparser
+import json
 
 import requests
 import googlemaps
@@ -70,10 +71,27 @@ class StoreFinder():
 		data = store_finder.read_csv('store-locations.csv', header=True)
 		location = self.get_lat_lng(self.address)
 		closest = self.get_closest_location(data, location)
-		print(closest)
-		distance = self.get_distance_between_locations({'lat': closest[6], 'lng': closest[7]}, location, units)
-		print(distance)
+		distance = round(self.get_distance_between_locations({'lat': closest[6], 'lng': closest[7]}, location, units), 2)
+		if self.output == 'text':
+			print("The nearest store is {}, located at {}, {}, {} and is {} {} away from {}".format(closest[0], closest[2], closest[3], closest[4], distance, units, self.address))
 
+		elif self.output == 'json':
+
+			response = {
+				'Search Address': self.address,
+				'Store Name': closest[0],
+				'Nearest Address': closest[2],
+				'City': closest[3],
+				'State': closest[4],
+				'Distance': distance,
+				'Units': units
+			}
+
+			with open('output.json', 'w') as outfile:
+				json.dump(response, outfile)
+
+		else:
+			raise Exception('Output must be either "text" or "json"!')
 
 if __name__ == '__main__':
 
