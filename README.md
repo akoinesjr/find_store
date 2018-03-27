@@ -18,8 +18,10 @@ tests.py -
 2. Create and activate a new Python 3 virtual environment
 3. Create a file called config.ini in the top level of this repository with the following contents:
 
+```
 [config]
 google_key = $YOUR_GOOGLE_MAPS_API_KEY_HERE
+```
 
 4. Run pip install -r requirement.txt to install Find Store's depencies
 
