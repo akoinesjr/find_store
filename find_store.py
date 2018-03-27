@@ -69,14 +69,14 @@ class StoreFinder():
 
 	def run(self):
 
-		data = store_finder.read_csv('store-locations.csv', header=True)
+		data = self.read_csv('store-locations.csv', header=True)
 		location = self.get_lat_lng(self.address)
 		closest = self.get_closest_location(data, location)
 
-		distance = round(self.get_distance_between_locations({'lat': closest[6], 'lng': closest[7]}, location, units), 2)
+		distance = round(self.get_distance_between_locations({'lat': closest[6], 'lng': closest[7]}, location, self.units), 2)
 
 		if self.output == 'text':
-			response = "The nearest store is {}, located at {}, {}, {} and is {} {} away from {}".format(closest[0], closest[2], closest[3], closest[4], distance, units, self.address)
+			response = "The nearest store is {}, located at {}, {}, {} and is {} {} away from {}".format(closest[0], closest[2], closest[3], closest[4], distance, self.units, self.address)
 
 			with open('output.txt', 'w') as outfile:
 				outfile.write(response)
@@ -90,7 +90,7 @@ class StoreFinder():
 				'City': closest[3],
 				'State': closest[4],
 				'Distance': distance,
-				'Units': units
+				'Units': self.units
 			}
 
 			with open('output.json', 'w') as outfile:
@@ -98,6 +98,8 @@ class StoreFinder():
 
 		else:
 			raise Exception('Output must be either "text" or "json"!')
+
+		return response
 
 if __name__ == '__main__':
 

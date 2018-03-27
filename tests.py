@@ -12,6 +12,7 @@ output = 'text'
 
 class TestStoreFinder(unittest.TestCase):
 
+
 	def setUp(self):
 		self.StoreFinder = StoreFinder(google_key, address, units, output)
 
@@ -30,6 +31,17 @@ class TestStoreFinder(unittest.TestCase):
 		closest = self.StoreFinder.get_closest_location(data, location)
 		self.assertEqual(['San Francisco CBD East', 'SWC Bush and Sansome Street', '225 Bush St', 'San Francisco', 'CA', '94104-4251', '37.790841', '-122.4012802', 'San Francisco County'], closest)
 
+	def test_output(self):
+		response = self.StoreFinder.run()
+		self.assertEqual(response, 'The nearest store is San Francisco CBD East, located at 225 Bush St, San Francisco, CA and is 0.41 mi away from 1 Market St, San Francisco, CA')
+
+		self.StoreFinder.units = 'km'
+		response = self.StoreFinder.run()
+		self.assertEqual(response, 'The nearest store is San Francisco CBD East, located at 225 Bush St, San Francisco, CA and is 0.66 km away from 1 Market St, San Francisco, CA')
+
+		self.StoreFinder.output = 'json'
+		response = self.StoreFinder.run()
+		self.assertEqual(response, {'Store Name': 'San Francisco CBD East', 'Distance': 0.66, 'Nearest Address': '225 Bush St', 'Units': 'km', 'City': 'San Francisco', 'Search Address': '1 Market St, San Francisco, CA', 'State': 'CA'})
 
 
 if __name__ == '__main__':
